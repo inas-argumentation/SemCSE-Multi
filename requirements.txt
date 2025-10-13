@@ -1,0 +1,10 @@
+adapters==1.0.1
+cma==4.0.0
+numba==0.61.2
+numpy==2.3.3
+scikit_learn==1.7.2
+scipy==1.16.2
+sentence_transformers==3.4.1
+torch==2.6.0
+tqdm==4.67.1
+transformers==4.51.3
