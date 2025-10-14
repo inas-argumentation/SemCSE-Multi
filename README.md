@@ -48,6 +48,17 @@ We further develop a way to decode embedding space into natural language descrip
 
 The main advantages of our multi-faceted embedding approach are that the individual, aspect-specific embeddings 1) are better at capturing similarities of that aspect and 2) isolate this apsect, thus allowing for controllable similarity assessments.
 
+Below, you see two t-SNE visualizations of the "Hypothesis" (left) and "Species" (middle) embedding spaces produced by SemCSE-Multi. They are clearly distinct, thus demonstrating that the embeddings encode the different aspects in isolation. The left image displays a baseline in the form of SciNCL, which is less distinctly structured and does not offer any control over the measure of similarity.
+
+<img src="data/embeddings.png" alt="SemCSE-Multi and baseline visualizations of abstract clustering">
+
+This is also demonstrated in our evaluation.
+We compared different embedding-based pairwise similarity assessments (column 1) against ground-truth pairwise similarity scores that judge the similarity of the two underlying scientific abstracts with respect to that aspect.
+We see that the embeddings for a specific aspect do correlate well with the ground-truth assessment of that same aspect. For details, please see our paper.
+
+<img src="data/Table.png" alt="SemCSE-Multi and baseline visualizations of abstract clustering">
+
+
 ## Performing Experiments and Evaluations
 
 This repository contains all necessary files for running our experiments and evaluations. This includes:
@@ -57,10 +68,6 @@ This repository contains all necessary files for running our experiments and eva
 * The code for running all evaluations
 
 Each domain (invasion biology/medicine) has its own directory. The filenames should be self-explanatory. To see how to run the individual components, see `main.py` and comment out all unwanted steps.
-
-## Results
-
-Our aspect-specific 
 
 ### Citation
 ```bibtex
