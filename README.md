@@ -1,6 +1,8 @@
 This is the official code repository for the paper:
 ### SemCSE-Multi: Multifaceted and Decodable Embeddings for Aspect-Specific and Interpretable Scientific Domain Mapping
 
+Link to the paper: [Click here!](https://arxiv.org/abs/2510.11599)
+
 We develop a pipeline for training multifaceted embedding models in the scientific domain. This means, that the embedding model outputs multiple embeddings that encode different aspects of the underlying scientific text.
 In our experiments, we trained two models, one for the domain of invasion biology and one for the medical domain.
 You can use the models like this:
@@ -33,6 +35,19 @@ batch = tokenizer([text], return_tensors='pt')
 output = model(**batch)["disease"]
 ```
 
+## Overview
+
+We propose to train a multifaceted embedding model that produces multiple aspect-specific embeddings for a given scientific text in a single forward pass. This is done in two steps:
+
+1. For any dataset of scientific abstracts from the target domain, we predict individual summarizing sentences for each aspect separately and train individual embedding models on these summarizing sentences to create a structured embedding space.
+2. We then distill these individual aspect embedding models into a single unified model that predicts all aspect-specific embeddings at once.
+
+We further develop a way to decode embedding space into natural language descriptions, thus making the embedding space interpretable.
+
+## Results
+
+The main advantages of our multi-faceted embedding approach are that the individual, aspect-specific embeddings 1) are better at capturing similarities of that aspect and 2) isolate this apsect, thus allowing for controllable similarity assessments.
+
 ## Performing Experiments and Evaluations
 
 This repository contains all necessary files for running our experiments and evaluations. This includes:
@@ -42,3 +57,21 @@ This repository contains all necessary files for running our experiments and eva
 * The code for running all evaluations
 
 Each domain (invasion biology/medicine) has its own directory. The filenames should be self-explanatory. To see how to run the individual components, see `main.py` and comment out all unwanted steps.
+
+## Results
+
+Our aspect-specific 
+
+### Citation
+```bibtex
+@misc{brinner2025semcsemultimultifaceteddecodableembeddings,
+      title={SemCSE-Multi: Multifaceted and Decodable Embeddings for Aspect-Specific and Interpretable Scientific Domain Mapping}, 
+      author={Marc Brinner and Sina Zarrieß},
+      year={2025},
+      eprint={2510.11599},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2510.11599}, 
+}
+```
+
