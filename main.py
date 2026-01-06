@@ -1,13 +1,4 @@
 import os
-if os.path.exists("/mnt/67FA8D9E50BFBFCF/huggingface"):
-    os.environ['HF_HOME'] = "/mnt/67FA8D9E50BFBFCF/huggingface"
-
-if os.path.exists("/mnt/data/mbrinner/huggingface"):
-    os.environ['HF_HOME'] = "/mnt/data/mbrinner/huggingface"
-
-import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "2"
-
 
 def generate_invasion_biology_data():
     from invasion_biology_embeddings import generate_aspect_specific_summaries, generate_pairwise_assessment_dataset
